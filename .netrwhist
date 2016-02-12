@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/alaroldai/fbsource/fbobjc/Apps/FBMessenger/Libraries/MNMessagingDataPreparer/MNMessagingDataPreparer'
+let g:netrw_dirhist_2='/Users/alaroldai/fbsource/fbobjc/Apps/FBMessenger/Libraries/MNMessagingDataPreparer'
+let g:netrw_dirhist_3='/Users/alaroldai/fbsource/fbobjc/Apps/FBMessenger/Libraries/MNMessagingDataPreparer/MNMessagingDataPreparerTests'
+let g:netrw_dirhist_4='/Users/alaroldai/fbsource/fbobjc/Apps/FBMessenger/Libraries/MNUserFetchKit/MNUserFetchKitTests'

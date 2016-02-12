@@ -1,0 +1,38 @@
+#!/ur/bin/env python
+# vim: ft=python
+from os import path, listdir, chdir, getcwd
+from shutil import rmtree
+from subprocess import Popen, PIPE
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+startdir = getcwd()
+repos = {'vim-commentary' : 'https://github.com/tpope/vim-commentary',
+         'vim-easymotion' : 'https://github.com/Lokaltog/vim-easymotion.git',
+         'vim-signature'  : 'https://github.com/kshenoy/vim-signature',
+         'vim-polyglot'   : 'https://github.com/sheerun/vim-polyglot',
+         'ctrlp.vim'      : 'https://github.com/kien/ctrlp.vim.git',
+         'vim-nasm'       : 'https://github.com/helino/vim-nasm',
+         'vim-go'         : 'https://github.com/fatih/vim-go',
+         'vim-fugitive'   : 'https://github.com/tpope/vim-fugitive.git',
+         'vim-swift'      : 'https://github.com/kballard/vim-swift',
+         'vim-peekaboo'   : 'https://github.com/junegunn/vim-peekaboo',
+         'vim-bufferline' : 'https://github.com/bling/vim-bufferline',
+         'twilight256'    : 'https://github.com/vim-scripts/twilight256.vim',
+         'vim-toml'       : 'https://github.com/cespare/vim-toml',
+         'vim-hy'         : 'https://github.com/hylang/vim-hy',
+         'vim-fish'       : 'https://github.com/dag/vim-fish.git',
+         'ag.vim'         : 'https://github.com/rking/ag.vim'}
+
+for plugin, repo in repos.items():
+    print('{}{}{} -> {}{}{}'.format(bcolors.OKBLUE, plugin, bcolors.ENDC, bcolors.OKGREEN, repo, bcolors.ENDC))
+    Popen('git submodule add {} {}'.format(repo, path.join('bundle', plugin)).split()).wait()
+
